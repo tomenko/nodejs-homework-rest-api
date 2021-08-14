@@ -1,4 +1,3 @@
-  
 const contactSchema = require('./contact');
 const userSchema = require('./user');
 
