@@ -15,4 +15,5 @@ router.patch('/avatars', authenticate, upload, ctrl.updateAvatar);
 router.get('/verify/:verifyCode', ctrl.verify);
 router.post('/verify', ctrl.reVerify);
 
+
 module.exports = router;
