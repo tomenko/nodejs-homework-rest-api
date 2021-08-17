@@ -28,6 +28,7 @@ const userSchema = Schema(
         return gravatar.url(this.email, { protocol: 'https' });
       },
     },
+
     verified: {
       type: Boolean,
       default: false,
@@ -36,6 +37,7 @@ const userSchema = Schema(
       type: String,
       required: [true, 'Verification code is required'],
     },
+
   },
   { timestamps: true },
 );

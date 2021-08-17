@@ -16,6 +16,7 @@ const signup = async (req, res, next) => {
         data: 'Conflict',
       });
     }
+
     const verifyCode = await nanoid();
     const newUser = await service.addUser({ password, email, verifyCode });
 
@@ -29,6 +30,8 @@ http://localhost:3003/api/v1/users/verify/${verifyCode}`,
     };
     await sendMail(mail);
 
+    const newUser = await service.addUser({ email, password });
+    const { _id, subscription, avatarURL } = newUser;
     res.status(HTTP_STATUS.CREATED).json({
       status: 'Success',
       code: HTTP_STATUS.CREATED,
