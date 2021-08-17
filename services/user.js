@@ -4,6 +4,11 @@ const getById = id => User.findById(id);
 
 const getOne = filter => User.findOne(filter);
 
+
+const addUser = async ({ password, ...other }) => {
+  console.log('other :>> ', other);
+  const newUser = await new User(other);
+
 const addUser = async ({ email, password }) => {
   const newUser = await new User({ email });
   newUser.setPassword(password);

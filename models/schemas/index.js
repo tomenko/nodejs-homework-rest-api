@@ -1,3 +1,5 @@
+const contactSchema = require("./contact");
+const userSchema = require("./user");
 const contactSchema = require('./contact');
 const userSchema = require('./user');
 
